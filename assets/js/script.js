@@ -1,5 +1,12 @@
 // Assignment code here
+var lowerC = "qazwsxedcrfvtgbyhnujmikolp";
+var upperC = lowerC.toUpperCase();
+var symb = " !$%()&*+,-./:;<=>?@[]^_`{}|~#";
+var numb = "1234567890";
 
+function generatePassword() {
+
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
