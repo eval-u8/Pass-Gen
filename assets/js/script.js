@@ -6,7 +6,7 @@ var numb = "1234567890";
 
 function generatePassword() {
   // ask user for desired length.
-  var lengthU = prompt("How long would you like your password to be? Please enter the number of characterS you'd like to have.\n This cannot be shorter than 8 characters, nor longer than 128 characters");
+  var lengthU = prompt("How long would you like your password to be? Please enter the number of characters you'd like to have.\n \nThis cannot be shorter than 8 characters, nor longer than 128 characters. Please enter a number only.");
   // set conditions for its length
   if (lengthU < 8 || lengthU > 128 || lengthU === null || isNaN(lengthU)) {
     alert("Please enter a valid number for the range of characters (8-128)");
@@ -18,14 +18,12 @@ function generatePassword() {
   if (confLower) {
     confirm("Are you sure you'd like to add lowercase characters??");
     userPassPool = userPassPool + lowerC;
-    // console.log(userPassPool);
   }
 //ask user if uppercase
   var confUpper = confirm("Would you like to include UPPERCASE characters to your password?");
   if (confUpper) {
     confirm("Are you sure you'd like to add UPPERCASE characters??");
     userPassPool = userPassPool + upperC;
-    // console.log(userPassPool);
 
   }
   //ask user if numbers
@@ -33,7 +31,6 @@ function generatePassword() {
   if (confNume) {
     confirm("Are you sure you'd like to add num3r1c characters??");
     userPassPool = userPassPool + numb;
-    // console.log(userPassPool);
 
   }
   //ask user if special
@@ -41,14 +38,16 @@ function generatePassword() {
   if (confSpec) {
     confirm("Are you sure you'd like to add $pec!@l characters??");
     userPassPool = userPassPool + symb;
-    // console.log(userPassPool);
+  }
+
+  if (userPassPool === "") {
+    alert("You did not select any critera, please select at least one");
+    generatePassword();
   }
   var tempPass="";
   for (var i = 0; i < lengthU ; i++) {
     var finalPass = userPassPool[Math.floor(Math.random() * userPassPool.length)];
     tempPass += finalPass;
-    console.log(tempPass);
-    console.log(userPassPool);
   } return tempPass;
   
 
