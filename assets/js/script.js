@@ -1,7 +1,7 @@
 // Assignment code here
 var lowerC = "qazwsxedcrfvtgbyhnujmikolp";
 var upperC = "QAZWSXEDCRFVTGBYHNUJMIKOLP";
-var symb = " !$%()&*+,-./:;<=>?@[]^_`{}|~#";
+var symb = "!$%()&*+,-./:;<=>?@[]^_`{}|~#";
 var numb = "1234567890";
 
 function generatePassword() {
@@ -20,7 +20,7 @@ function generatePassword() {
     // confirm("Are you sure you'd like to add lowercase characters??");
     userPassPool = userPassPool + lowerC;
     tempPass += lowerC[Math.floor(Math.random() * lowerC.length)];
-    console.log(tempPass);
+    // console.log(tempPass);
   }
 //ask user if uppercase
   var confUpper = confirm("Would you like to include UPPERCASE characters to your password?");
@@ -28,7 +28,7 @@ function generatePassword() {
     // confirm("Are you sure you'd like to add UPPERCASE characters??");
     userPassPool = userPassPool + upperC;
     tempPass += upperC[Math.floor(Math.random() * upperC.length)];
-    console.log(tempPass);
+    // console.log(tempPass);
   }
   //ask user if numbers
   var confNume = confirm("Would you like to include num3r1c characters to your password?");
@@ -36,7 +36,7 @@ function generatePassword() {
     // confirm("Are you sure you'd like to add num3r1c characters??");
     userPassPool = userPassPool + numb;
     tempPass += numb[Math.floor(Math.random() * numb.length)];
-    console.log(tempPass);
+    // console.log(tempPass);
   }
   //ask user if special
   var confSpec = confirm("Would you like to include $pec!@l characters to your password?");
@@ -44,7 +44,7 @@ function generatePassword() {
     // confirm("Are you sure you'd like to add $pec!@l characters??");
     userPassPool = userPassPool + symb;
     tempPass += symb[Math.floor(Math.random() * symb.length)];
-    console.log(tempPass);
+    // console.log(tempPass);
   }
 
   if (userPassPool === "") {
