@@ -69,9 +69,7 @@ function generatePassword() {
         return tempArr.join("");
       }
       const result = shuffle();
-
     return result;
-    
 }
 
 // Get references to the #generate element
