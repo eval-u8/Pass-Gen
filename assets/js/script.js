@@ -13,44 +13,65 @@ function generatePassword() {
     generatePassword();
   }
   var userPassPool = "";
+  var tempPass = "";
 // ask user if lowercase
   var confLower = confirm("Would you like to include lowercase characters to your password?");
   if (confLower) {
     confirm("Are you sure you'd like to add lowercase characters??");
     userPassPool = userPassPool + lowerC;
+    tempPass += lowerC[Math.floor(Math.random() * lowerC.length)];
+    console.log(tempPass);
   }
 //ask user if uppercase
   var confUpper = confirm("Would you like to include UPPERCASE characters to your password?");
   if (confUpper) {
     confirm("Are you sure you'd like to add UPPERCASE characters??");
     userPassPool = userPassPool + upperC;
-
+    tempPass += upperC[Math.floor(Math.random() * upperC.length)];
+    console.log(tempPass);
   }
   //ask user if numbers
   var confNume = confirm("Would you like to include num3r1c characters to your password?");
   if (confNume) {
     confirm("Are you sure you'd like to add num3r1c characters??");
     userPassPool = userPassPool + numb;
-
+    tempPass += numb[Math.floor(Math.random() * numb.length)];
+    console.log(tempPass);
   }
   //ask user if special
   var confSpec = confirm("Would you like to include $pec!@l characters to your password?");
   if (confSpec) {
     confirm("Are you sure you'd like to add $pec!@l characters??");
     userPassPool = userPassPool + symb;
+    tempPass += symb[Math.floor(Math.random() * symb.length)];
+    console.log(tempPass);
   }
 
   if (userPassPool === "") {
     alert("You did not select any critera, please select at least one");
     generatePassword();
   }
-  var tempPass="";
-  for (var i = 0; i < lengthU ; i++) {
-    var finalPass = userPassPool[Math.floor(Math.random() * userPassPool.length)];
-    tempPass += finalPass;
-  } return tempPass;
   
 
+    for (var i = tempPass.length; i < lengthU ; i++) {
+    var finalPass = userPassPool[Math.floor(Math.random() * userPassPool.length)];
+    tempPass += finalPass;
+    }
+      function shuffle() {
+        var tempArr = tempPass.split('');
+          for (var i = 0; i < tempArr.length-1 ; i++);{
+            var x = Math.floor(Math.random() * tempArr.length);
+
+            var temp = tempArr[i];
+            tempArr[i] = tempArr[x];
+            tempArr[x] = temp;
+          }
+          tempPass = tempArr.join('');
+          return tempPass;
+      }
+      shuffle();
+    return tempPass;
+    
 }
 
 // Get references to the #generate element
